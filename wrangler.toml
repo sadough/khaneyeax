@@ -1,3 +1,6 @@
 name = "khaneyeax-worker"
 main = "khaneyeax.js"
 compatibility_date = "2024-07-01"
+[vars]
+SECRET_API_KEY = "sk-ca1b6f045e0b4d1681a32e82b0e5b2f6"
+ALLOWED_ORIGINS = "https://khaneyeax.com,http://localhost:8080"
