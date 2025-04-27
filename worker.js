@@ -44,3 +44,21 @@ async function handleRequest(request) {
 addEventListener('fetch', event => {
   event.respondWith(handleRequest(event.request));
 });
+
+const corsHeaders = {
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Methods": "POST, OPTIONS",
+    "Access-Control-Allow-Headers": "Content-Type"
+};
+
+if (request.method === "OPTIONS") {
+    return new Response(null, { headers: corsHeaders });
+}
+
+// در پاسخ اصلی:
+return new Response(JSON.stringify(responseData), {
+    headers: {
+        ...corsHeaders,
+        "Content-Type": "application/json"
+    }
+});
